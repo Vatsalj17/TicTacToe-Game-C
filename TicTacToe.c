@@ -109,12 +109,12 @@ bool conditions(char win[], int *ch)
     }
 
     // Check diagonals
-    if (win[0] == win[4] && win[4] == win[8] && check == 0)
+    if (win[0] == win[4] && win[4] == win[8])
     {
         *ch = 0;
         return true;
     }
-    if (win[2] == win[4] && win[4] == win[6] && check == 0)
+    if (win[2] == win[4] && win[4] == win[6])
     {
         *ch = 2;
         return true;
