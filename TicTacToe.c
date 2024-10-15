@@ -59,7 +59,7 @@ void usermove(char play[])
     }
 }
 
-// Function to check if all positions are filled, indicating the board is complete.
+// Function to check if all positions are filled, indicating the board is complete
 bool complete(char final[])
 {
     for (int i = 0; i < 9; i++)
@@ -74,10 +74,10 @@ bool complete(char final[])
 void computermove(char play[])
 {
     int r;
-    while (!(isdigit(play[r])))
+    while (1)
     {
         r = rand() % 9;
-        if (!(play[r] == 'X' || play[r] == 'O'))
+        if (isdigit(play[r]))
         {
             play[r] = 'O';
             break;
@@ -131,7 +131,7 @@ void game()
 
     intro();
 
-    while (!(complete(position)))
+    while (1)
     {
         usermove(position);
 
