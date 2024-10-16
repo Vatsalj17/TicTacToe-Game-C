@@ -129,16 +129,20 @@ void game()
     int index;
     setposition(position);
 
-    intro();
-
     while (1)
     {
+        system("cls");
+
+        intro();
+
         usermove(position);
 
         if (conditions(position, &index))
         {
             if (position[index] == 'X')
             {
+                system("cls");
+                intro();
                 printboard(position);
                 printf("You Won!\n");
                 break;
@@ -147,16 +151,21 @@ void game()
 
         if (complete(position))
         {
+            system("cls");
+            intro();
             printboard(position);
             printf("Draw!\n");
             break;
         }
 
         computermove(position);
+
         if (conditions(position, &index))
         {
             if (position[index] == 'O')
             {
+                system("cls");
+                intro();
                 printboard(position);
                 printf("Computer Won!\n");
                 break;
@@ -165,6 +174,8 @@ void game()
 
         if (complete(position))
         {
+            system("cls");
+            intro();
             printboard(position);
             printf("Draw!\n");
             break;
